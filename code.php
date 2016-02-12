@@ -1,10 +1,10 @@
-public function apiProfilePic(){
+public function apiPic(){
 		try{
-			if($this->main_model->get_profilepic_id('images_pic',$_POST['id']) == true){
-				$result['data'] = "<img alt='' class='img-circle' src='".base_url()."images/uploads/no_img.png' />";
+			if($this->get_model->get_pic_id('images_pic',$_POST['id']) == true){
+				$result['data'] = "<img alt='' class='img-circle' src='".base_url()."images/img.png' />";
 			}
 			else{
-				$result = $this->main_model->get_profilepic_id('images_pic',$_POST['id']);
+				$result = $this->get_model->get_pic_id('images_pic',$_POST['id']);
 				$result['data'] = '<img src="data:image/jpeg;base64,'.base64_encode($result->images_pic ).'"class="img-circle"/>';
 			}			
 			$result['success'] = true;
